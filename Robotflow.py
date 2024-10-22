@@ -1,3 +1,11 @@
+# pip install inference-cli --user
+# pip install supervision
+# pip install cv2
+# sudo apt-get update
+# sudo apt-get install -y libgl1
+# pip install pillow
+
+
 from inference_sdk import InferenceHTTPClient
 import cv2
 import supervision as sv
@@ -6,7 +14,7 @@ from tkinter import Tk
 from PIL import Image
 
 # Initiate default value
-image = cv2.imread("car.jpg")
+image = cv2.imread("/workspaces/Green-AI-Event/car.jpg")
 model_id = "vehicle-detection-bz0yu/4"
 
 
@@ -24,14 +32,14 @@ def select_image():
 
 
 # Select an image from the file system
-image_file = select_image()
-if not image_file:
-    print("No image selected.")
-else:
+# image_file = select_image()
+# if not image_file:
+#    print("No image selected.")
+# else:
     # Get the first selected image file from the tuple
-    image_path = image_file[0]  # Use [0] to get the first file
-    print(image_path)
-    image = cv2.imread(image_path)
+#    image_path = image_file[0]  # Use [0] to get the first file
+#    print(image_path)
+#    image = cv2.imread(image_path)
 
 # Configure client
 client = InferenceHTTPClient(
@@ -64,8 +72,7 @@ with sv.ImageSink(target_dir_path="./results/", overwrite=True) as sink:
 # or sv.plot_image(annotated_image)
 
 # Display the annotated image in a pop-up window using OpenCV
-image_path = ("C:/Users/tanwa/OneDrive - MSFT/TWK developer/Documents/PycharmProjects/"
-              "pythonProject2/results/image_00000.png")
+image_path = ("/workspaces/Green-AI-Event/results/image_00000.png")
 # Change this to your specific path
 
 # Open the image in the default viewer
