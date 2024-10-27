@@ -13,5 +13,5 @@ sudo apt-get install -y libgl1
 
 ## HuggingFace Face Liveness Detection
 ```
-# pip install gradio_client --user
+pip install gradio_client --user
 ```
